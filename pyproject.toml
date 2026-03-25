@@ -1,0 +1,22 @@
+[project]
+name = "founder-dashboard-agent"
+version = "0.1.0"
+description = "Scrappy daily founder dashboard agent"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.32.0",
+  "python-dotenv>=1.0.1",
+  "redis>=5.2.0",
+]
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.44.0"]
+
+[project.scripts]
+founder-dashboard = "founder_dashboard.cli:main"
+founder-dashboard-scheduled = "founder_dashboard.scheduler:main"
+
+[build-system]
+requires = ["setuptools>=69.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
